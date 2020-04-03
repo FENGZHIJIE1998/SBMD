@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 不要忘了头上的 -->
+
+<!--记得修改mapper的路径和相关属性！-->
+<mapper namespace="com.dazhi.sbmd.modules.user.dao.UserMapper">
+    <resultMap id="UserMap" type="com.dazhi.sbmd.modules.user.entity.User">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--  插入一个User-->
+    <insert id="insert" parameterType="com.dazhi.sbmd.modules.user.entity.User">
+        INSERT INTO
+        user
+        (name,age)
+        VALUES
+        (#{name}, #{age})
+    </insert>
+
+</mapper>
